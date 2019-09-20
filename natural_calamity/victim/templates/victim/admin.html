@@ -43,7 +43,7 @@
                         <a href="#mytoast1" class="show-toast ap">Add professor</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#mytoast1" class="show-toast up">Add professor</a>
+                        <a href="#mytoast2" class="show-toast up">Add professor</a>
                     </li>
                 </ul>
             </div>
@@ -58,7 +58,7 @@
                     </button>
                 </div>
                 <div class="toast-body">
-                    <form action="{% url 'victim' %}" method="POST">{% csrf_token %}
+                    <form action="{% url 'admin' %}" method="POST">{% csrf_token %}
                         <div class="form-group">
                             <label for="email">Email address:</label>
                             <input type="email" class="form-control" id="email">
@@ -77,41 +77,6 @@
                 </div>
             </div>
 
-            <div class="toast" id="mytoast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true">
-                <div class="toast-header" >
-                    <img src="..." class="rounded mr-2" alt="...">
-                    <strong class="mr-auto">Bootstrap</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    <form action="{% url 'victim' %}" method="POST">{% csrf_token %}
-                        <div class="form-group">
-                            Name:
-                            <input type="text" class="form-control" name="Victim_name" required>
-                        </div>
-                        <div class="form-group">
-                            Address:
-                            <input type="text" class="form-control" name="Victim_address">
-                        </div>
-                        <div class="form-group">
-                            Contact:
-                            <input type="tel" class="form-control" name="Victim_number" required>
-                        </div>
-                        <div class="form-group">
-                            Email:
-                            <input type="email" class="form-control" name="Victim_email" required>
-                        </div>
-                        <div class="form-group">
-                            Password:
-                            <input type="password" class="form-control" name="Victim_pass" required>
-                        </div>
-                        <button type="submit">Create Account</button>
-                    </form>
-                </div>
-            </div>
-
             <div class="toast" id="mytoast2" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true">
                 <div class="toast-header" >
                     <img src="..." class="rounded mr-2" alt="...">
@@ -120,8 +85,53 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
+
+
                 <div class="toast-body">
-                    <form action="{% url 'victim' %}" method="POST">{% csrf_token %}
+                    <form method="POST">{% csrf_token %}
+                        <div class="form-group">
+                            Name:
+                            <input type="text" class="form-control" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            Address:
+                            <input type="text" class="form-control" name="address" required>
+                        </div>
+                        <div class="form-group">
+                            Contact:
+                            <input type="tel" class="form-control" name="contact" required>
+                        </div>
+                        <div class="form-group">
+                            Email:
+                            <input type="email" class="form-control" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            Password:
+                            <input type="password" class="form-control" name="pwd" required>
+                        </div>
+                        <div class="form-group">
+                            Designation:
+                            <input type="text" class="form-control" name="designation" required>
+                        </div>
+                        <div class="form-group">
+                            Designation:
+                            <input type="number" class="form-control" name="capacity" required>
+                        </div>
+                        <button type="submit">Create Account</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="toast" id="mytoast3" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true">
+                <div class="toast-header" >
+                    <img src="..." class="rounded mr-2" alt="...">
+                    <strong class="mr-auto">Bootstrap</strong>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    <form action="{% url 'admin' %}" method="POST">{% csrf_token %}
                         <div class="form-group">
                             <label for="email">Email address:</label>
                             <input type="email" class="form-control" id="email">

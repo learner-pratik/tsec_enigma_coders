@@ -27,29 +27,28 @@
             <div class="jumbotron text-center">
                 <h1>Login Form</h1>
             </div>
-            <form>
+            <form action="{% url 'victim' %}" method="POST">{% csrf_token %}
                 <div class="form-group">
-                    <label for="Name">Name: </label>
-                    <input type="text" class="form-control" id="name" required>
+                    Name:
+                    <input type="text" class="form-control" name="Victim_name" required>
                 </div>
                 <div class="form-group">
-                    <label for="Address: ">Address: </label>
-                    <button class="btn btn-sm btn-default" id="loc" onclick="getlocation()">Select current location as address</button>
-                    <h5><strong>Add another address:</strong></h5>
-                    <textarea class="form-control" rows="5"></textarea>
+                    Address:
+                    <input type="text" class="form-control" name="Victim_address">
                 </div>
                 <div class="form-group">
-                    <label for="Contact">Contact: </label>
-                    <input type="tel" class="form-control" id="contact" required>
+                    contact:
+                    <input type="tel" class="form-control" name="Victim_number" required>
                 </div>
                 <div class="form-group">
-                    <label for="Email">Email: </label>
-                    <input type="email" class="form-control" id="email" required>
+                    Email:
+                    <input type="email" class="form-control" name="Victim_email" required>
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Password: </label>
-                    <input type="password" class="form-control" id="pwd" required>
+                    Password:
+                    <input type="password" class="form-control" name="Victim_pass" required>
                 </div>
+                <button type="submit">Create Account</button>
             </form>
         </div>
     </body>

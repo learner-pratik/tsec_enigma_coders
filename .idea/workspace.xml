@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="accd5a85-5aa5-4910-8c78-2f19d734332a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/natural_calamity/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/natural_calamity/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/natural_calamity/victim/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/natural_calamity/victim/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/natural_calamity/victim/templates/victim/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/natural_calamity/victim/templates/victim/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/natural_calamity/victim/templates/victim/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/natural_calamity/victim/templates/victim/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/natural_calamity/victim/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/natural_calamity/victim/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/natural_calamity/victim/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/natural_calamity/victim/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

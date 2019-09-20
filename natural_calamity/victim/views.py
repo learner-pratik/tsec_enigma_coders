@@ -12,3 +12,7 @@ def login(request):
             form.save()
             print("hellos")
     return render(request, 'victim/login.html', {})
+
+
+def home(request):
+    return render(request, 'victim/main.html', {})

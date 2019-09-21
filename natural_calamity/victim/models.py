@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class Login(models.Model):
+    username = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.username
+
+
 class adminDB(models.Model):  # model for patient
     name = models.CharField(max_length=200)
     address = models.CharField(max_length=200)
@@ -13,6 +21,7 @@ class adminDB(models.Model):  # model for patient
     def __str__(self):
         return self.name
 
+
 class Volunteer(models.Model):  # model for patient
     Volunteer_name = models.CharField(max_length=200)
     Volunteer_address = models.CharField(max_length=200)
@@ -23,5 +32,6 @@ class Volunteer(models.Model):  # model for patient
 
     def __str__(self):
         return self.Volunteer_name
+
 
 # Create your models here.

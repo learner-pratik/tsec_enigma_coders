@@ -5,7 +5,7 @@
     <title>Login </title>
 </head>
 <body>
-<form method="POST">{% csrf_token %}
+<form method="POST" action="/">{% csrf_token %}
                 <div class="form-group">
                     Name:
                     <input type="text" class="form-control" name="Volunteer_name" required>
@@ -27,7 +27,7 @@
                     <input type="password" class="form-control" name="Volunteer_pass" required>
                 </div>
                 <div class="form-group">
-                    Password:
+                    Max capacity:
                     <input type="number" class="form-control" name="Volunteer_maxcapacity" required>
                 </div>
                 <button type="submit">Create Account</button>

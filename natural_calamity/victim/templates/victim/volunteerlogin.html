@@ -5,11 +5,19 @@
     <title>Login </title>
 </head>
 <body>
-<form method="post">
-    {% csrf_token %}
-    username:<input type="text" name="Volunteer_email">
-    password:<input type="password" name="Volunteer_pass">
-    <button type="submit">Create Account</button>
-</form>
+
+<form method="post" action="volunteer">
+                  <div class="form-group">
+                     User Name
+                        {% csrf_token %}
+                     <input type="text" class="form-control" placeholder="User Name" name="username" id="foru" required>
+                  </div>
+                  <div class="form-group">
+                     <label id="fontp">Password</label>
+                     <input type="password" class="form-control" placeholder="Password" id="forp" name="password" required>
+                  </div>
+                  <button type="submit" class="btn btn-black" id="btn">Login</button>
+                   <br>
+               </form>
 </body>
 </html>

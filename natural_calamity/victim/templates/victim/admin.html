@@ -1,53 +1,49 @@
 <html>
     <head>
-        <title>Alert</title>
+        <title>Admin</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
-        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
         <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
 
-        <script>
-            $(document).ready(function(){
-                $(".show-toast.ap").click(function(){
-                    $("#mytoast1").toast('show');
-                });
-            });
-
-            $(document).ready(function(){
-                $(".show-toast.up").click(function(){
-                    $("#mytoast2").toast('show');
-                });
-            });
-        </script>
+        <style>
+            .navbar {
+                margin-bottom: 0;
+                background-color: aqua;
+                z-index: 9999;
+                border: 0;
+                font-size: 20px !important;
+                line-height: 1.42857143 !important;
+                letter-spacing: 4px;
+                border-radius: 0;
+            }
+            .navbar-nav li a:hover, .navbar-nav li.active a {
+                color: aqua !important;
+                background-color: #fff !important;
+            }
+        </style>
     </head>
     <body>
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
-            <!-- Brand -->
-            <a class="navbar-brand" href="#">Navbar</a>
-            
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#mytoast1" class="show-toast ap">Add professor</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#mytoast2" class="show-toast up">Add professor</a>
-                    </li>
-                </ul>
+        <div id='map' style='width:100%; height: 100%; position:absolute; display:block'></div>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AlertApp</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">Home</a></li>
+                <li><a href="vologin">Add Volunteer</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
             </div>
         </nav>
+        <!--
         <div class="container-fluid">
             <div class="toast" id="mytoast1" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true">
                 <div class="toast-header" >
@@ -75,81 +71,8 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
-            </div>
+            </div>-->
 
-            <div class="toast" id="mytoast2" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true">
-                <div class="toast-header" >
-                    <img src="..." class="rounded mr-2" alt="...">
-                    <strong class="mr-auto">Bootstrap</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
-
-                <div class="toast-body">
-                    <form method="POST">{% csrf_token %}
-                        <div class="form-group">
-                            Name:
-                            <input type="text" class="form-control" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            Address:
-                            <input type="text" class="form-control" name="address" required>
-                        </div>
-                        <div class="form-group">
-                            Contact:
-                            <input type="tel" class="form-control" name="contact" required>
-                        </div>
-                        <div class="form-group">
-                            Email:
-                            <input type="email" class="form-control" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            Password:
-                            <input type="password" class="form-control" name="pwd" required>
-                        </div>
-                        <div class="form-group">
-                            Designation:
-                            <input type="text" class="form-control" name="designation" required>
-                        </div>
-                        <div class="form-group">
-                            Designation:
-                            <input type="number" class="form-control" name="capacity" required>
-                        </div>
-                        <button type="submit">Create Account</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="toast" id="mytoast3" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" data-animation="true">
-                <div class="toast-header" >
-                    <img src="..." class="rounded mr-2" alt="...">
-                    <strong class="mr-auto">Bootstrap</strong>
-                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="toast-body">
-                    <form action="{% url 'admin' %}" method="POST">{% csrf_token %}
-                        <div class="form-group">
-                            <label for="email">Email address:</label>
-                            <input type="email" class="form-control" id="email">
-                        </div>
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" id="pwd">
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox"> Remember me
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-            </div>
-            <div id='map' style='width:100%; height: 100%;'></div>
         </div>
         <script>
             mapboxgl.accessToken = 'pk.eyJ1IjoicmF2aW5hbGF3YWRlIiwiYSI6ImNqdGszZjEzdDEzOXQ0YW82ZGdnemo0eXQifQ.3X-fGDmnABfgzTj3f4ENXg';

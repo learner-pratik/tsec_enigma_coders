@@ -20,12 +20,17 @@
 
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                </ul>
+                    <a href="vsignup"><span class="glyphicon glyphicon-user"></span> Sign Up</a>
+                    <a href="vollogin"><span class="glyphicon glyphicon-log-in"></span> Login</a>
             </div>
         </nav>
+
+
+    <form method="post">
+        {% csrf_token %}
+    <input type= "hidden" name="geoc1" id="g1" value="321">
+    <button id='b1' class="btn btn-primary" style="position:absolute; display:block" onclick="alertf()">Feedback</button>
+    </form>
         <!--<div class="toast" id="mytoast" data-autohide="false" data-animation="true" style="top: 300px; right: 300px;">
             <div class="toast-header">
                     <h2>Volunteers Login</h2>
@@ -45,6 +50,17 @@ var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/mapbox/streets-v11'
 });
+
+console.log(document.getElementById("g1").value);
+var name='nishant';
+function alertf()
+{
+document.getElementById("g1").value = name;
+console.log("world")
+}
+//console.log(document.getElementById("g1").value);
+
+
 </script>
 
     </body>
